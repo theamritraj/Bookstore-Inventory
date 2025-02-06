@@ -1,15 +1,20 @@
+import { BookProvider } from "./context/BookContext";
+import BookForm from "./components/BookForm";
+import BookList from "./components/BookList";
+import Filter from "./components/Filter";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
-import { Button } from "./components/ui/button"
-import { Progress } from "./components/ui/progress"
-
-
-const App = () => {
+function App() {
   return (
-    <div className="p-5 space-y-2 bg-gray-100">
-      <Button>Click me</Button>
-      <Progress value={33} />
-    </div>
-  )
+    <BookProvider>
+      <Header/>
+      <BookForm />
+      <Filter />
+      <BookList />
+      <Footer/>
+    </BookProvider>
+  );
 }
 
-export default App
+export default App;
