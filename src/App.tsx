@@ -1,7 +1,7 @@
 import { BookProvider } from "./context/BookContext";
 import BookForm from "./components/BookForm";
 import BookList from "./components/BookList";
-import Filter from "./components/Filter";
+// import Filter from "./components/Filter";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 
@@ -10,7 +10,7 @@ function App() {
     <BookProvider>
       <Header/>
       <BookForm />
-      <Filter />
+      {/* <Filter /> */}
       <BookList />
       <Footer/>
     </BookProvider>

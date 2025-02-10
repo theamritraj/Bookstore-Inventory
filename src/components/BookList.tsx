@@ -14,10 +14,10 @@ const BookList: React.FC = () => {
   const [maxPrice, setMaxPrice] = useState<number | "">("");
 
   const [books, setBooks] = useState<Book[]>([
-    { id: 1, title: "The Great Gatsby", author: "F. Scott Fitzgerald", genre: "Classic", price: 10 },
-    { id: 2, title: "1984", author: "George Orwell", genre: "Dystopian", price: 15 },
-    { id: 3, title: "To Kill a Mockingbird", author: "Harper Lee", genre: "Classic", price: 12 },
-    { id: 4, title: "Moby Dick", author: "Herman Melville", genre: "Adventure", price: 20 },
+    { id: 1, title: "The White Tiger", author: "Aravind Adiga", genre: "Fiction", price: 800 },
+    { id: 2, title: "Midnight's Children", author: "Salman Rushdie", genre: "Historical Fiction", price: 1200 },
+    { id: 3, title: "The God of Small Things", author: "Arundhati Roy", genre: "Fiction", price: 950 },
+    { id: 4, title: "Train to Pakistan", author: "Khushwant Singh", genre: "Historical Fiction", price: 700 },
   ]);
 
   // 🔍 Filter books based on search query and price range
@@ -53,14 +53,14 @@ const BookList: React.FC = () => {
         />
         <input
           type="number"
-          placeholder="Min Price ($)"
+          placeholder="Min Price (₹)"
           className="w-full md:w-1/6 p-2 border rounded-md"
           value={minPrice}
           onChange={(e) => setMinPrice(e.target.value ? Number(e.target.value) : "")}
         />
         <input
           type="number"
-          placeholder="Max Price ($)"
+          placeholder="Max Price (₹)"
           className="w-full md:w-1/6 p-2 border rounded-md"
           value={maxPrice}
           onChange={(e) => setMaxPrice(e.target.value ? Number(e.target.value) : "")}
@@ -74,7 +74,7 @@ const BookList: React.FC = () => {
             <th className="border p-2">Title</th>
             <th className="border p-2">Author</th>
             <th className="border p-2">Genre</th>
-            <th className="border p-2">Price ($)</th>
+            <th className="border p-2">Price (₹)</th>
             <th className="border p-2">Actions</th>
           </tr>
         </thead>
@@ -85,7 +85,7 @@ const BookList: React.FC = () => {
                 <td className="border p-2">{book.title}</td>
                 <td className="border p-2">{book.author}</td>
                 <td className="border p-2">{book.genre}</td>
-                <td className="border p-2">${book.price}</td>
+                <td className="border p-2">₹{book.price}</td>
                 <td className="border p-2 text-center">
                   <button className="bg-blue-500 text-white px-2 py-1 rounded-md mr-2">Edit</button>
                   <button
